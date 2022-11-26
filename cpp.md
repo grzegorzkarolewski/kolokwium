@@ -140,12 +140,75 @@ int main()
 ```
 
 ## Zadania na stringach
-- wyodrębnij nazwisko i imię, do dwóch zmiennych
-- zamieniamy miejscami nazwisko z imieniem
-- stwórz anagramy nazwiska i imienia
-- wyświetl inicjały NI
-- zamień miejscami pierwsze litery (Nmie Iazwisko)
+### Wyodrębnij nazwisko i imię, do dwóch zmiennych
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
 
+int main()
+{
+	string napis;
+
+    // Do getline potrzebujemy biblioteki <string>
+	getline(cin, napis);
+
+	// Wyodrędbnienie imienia i nazwiska
+	string imie = napis.substr(0, napis.find(' '));
+	string nazwisko = napis.substr(napis.find(' ') + 1); //+1 bo chcemy zacząć czytać od pierwszej litery nazwiska, a nie od spacji
+}
+```
+
+### Zamieniamy miejscami nazwisko z imieniem
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string napis;
+
+    // Do getline potrzebujemy biblioteki <string>
+	getline(cin, napis);
+
+	// Wyodrędbnienie imienia i nazwiska
+	string imie = napis.substr(0, napis.find(' '));
+	string nazwisko = napis.substr(napis.find(' ') + 1); //+1 bo chcemy zacząć czytać od pierwszej litery nazwiska, a nie od spacji
+
+	// Zamiana miejscami imie i nazwisko
+	swap(imie, nazwisko);
+}
+```
+### Stwórz anagramy nazwiska i imienia
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string napis;
+
+    // Do getline potrzebujemy biblioteki <string>
+	getline(cin, napis);
+
+	// Wyodrędbnienie imienia i nazwiska
+	string imie = napis.substr(0, napis.find(' '));
+	string nazwisko = napis.substr(napis.find(' ') + 1); //+1 bo chcemy zacząć czytać od pierwszej litery nazwiska, a nie od spacji
+	
+	// Anagram imie
+	for (int i = 0; i < imie.length() / 2; i++)
+	{
+		swap(imie[i], imie[imie.length() - 1 - i]);
+	}
+	
+	//Anagram nazwisko
+	for (int i = 0; i < nazwisko.length() / 2; i++)
+	{
+		swap(nazwisko[i], nazwisko[nazwisko.length() - 1]);
+	}
+}
+```
+### wyświetl inicjały NI
 ```cpp
 #include <iostream>
 #include <string>
@@ -164,32 +227,33 @@ int main()
 
 	// Wyświetlenie inicjałów
 	cout << nazwisko[0] << imie[0];
+}
+```
+### Zamień miejscami pierwsze litery (Nmie Iazwisko)
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
 
+int main()
+{
+	string napis;
+
+    // Do getline potrzebujemy biblioteki <string>
+	getline(cin, napis);
+
+	// Wyodrędbnienie imienia i nazwiska
+	string imie = napis.substr(0, napis.find(' '));
+	string nazwisko = napis.substr(napis.find(' ') + 1); //+1 bo chcemy zacząć czytać od pierwszej litery nazwiska, a nie od spacji
 	// Zamiana miejscami pierwszych znaków w stringu
 	char bufor = imie[0]; // musimy mieć bufor, aby zapamiętać pierwszy znak imienia zanim go podmienimy
 	imie[0] = nazwisko[0];
 	nazwisko[0] = bufor; // nie możemy tutaj wpisać imie[0], bo ten znak został już nadpisany, z tego powodu mamy bufor!
-
-	// Zamiana miejscami imie i nazwisko
-	swap(imie, nazwisko);
-
-	// Anagram imie
-	// Musimy dodać imie.length() / 2, ponieważ chcemy przejść tylko połowę string
-	// Bez tego dzielenia będziemy zamieniać znaki aż wrócimy do początkowego stanu
-	for (int i = 0; i < imie.length() / 2; i++)
-	{
-		swap(imie[i], imie[imie.length() - 1 - i]);
-	}
-	
-	//Anagram nazwisko
-	for (int i = 0; i < nazwisko.length() / 2; i++)
-	{
-		swap(nazwisko[i], nazwisko[nazwisko.length() - 1]);
-	}
 }
 ```
 
 ### Program, który utworzy string z tabliy char[]
+
 ```cpp
 #include <iostream>
 using namespace std;
