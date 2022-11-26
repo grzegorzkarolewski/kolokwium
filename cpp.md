@@ -575,3 +575,96 @@ int main()
 	cout << wynik;
 }
 ```
+
+## 1.1 Pobierz z konsoli trzy liczby typu double i wyświetl
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double x;
+	double y;
+	double z;
+
+	cin >> x >> y >> z;
+
+	int liczby[] = { x, y,z };
+
+	int max = liczby[0];
+	for (int i = 1; i < sizeof(liczby)/ sizeof(int); i++)
+	{
+		if (max < liczby[i])
+			max = liczby[i];
+	}
+
+	cout << "Maksymalna liczba to: " << max << endl;
+	cout << "Suma wartości bezwzględnych to: " << abs(x) + abs(y) + abs(z) <<endl;
+}
+```
+
+## 1.2 Napisz funkcję typu bool, która sprawdza czy trzy liczby są stronami trójkąta
+```cpp
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+bool czyTrojkat(double x, double y, double z) {
+	if (x <= 0 || y <= 0 || z <= 0)
+	{
+		cout << "Niepoprawne parametry";
+		return false;
+	}
+
+	int liczby[] = { x, y, z };
+
+	// sortowanie od najmniejszej do najwiekszej
+	// najwieszka wartość pod indexem liczby[2]
+	sort(liczby, liczby + 3);
+
+	if (liczby[2] < liczby[0] + liczby[1])
+		return true;
+
+	return false;
+}
+
+int main()
+{
+	double x;
+	double y;
+	double z;
+
+	cin >> x >> y >> z;
+
+	czyTrojkat(x, y, z);
+}
+```
+
+### 1.3 Napisz funkcję, która zwróci zaszyfrowany tekst. Zasada szyfrowania ASCII każdego znaku zwiększamy o konkretną liczbę string code(string s, int n)
+```cpp
+string code(string zdanie, int n) {
+	for (int i = 0; i < zdanie.length(); i++)
+	{
+		zdanie[i] = zdanie[i] + n;
+	}
+
+	return zdanie;
+}
+```
+
+### 1.4 Napisz funkcję, która oblicza n-tą liczbą z ciągu rekurencyjnego danej wzorem: f(0) = 0, f(1) = 1, f(n) = 2f(n-1) + f(n-2)
+```cpp
+int rekurencja(int n) {
+	if (n == 0) {
+		return 0;
+	}
+	else if (n == 1)
+	{
+		return 1;
+	}
+	else {
+		return 2 * rekurencja(n - 1) + rekurencja(n - 2);
+	}
+}
+```
