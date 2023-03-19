@@ -1,3 +1,4 @@
+## Zadanie 3
 def generate_lists():
     num_list = input("Podaj co najmniej 7 liczb, oddzielając je przecinkami: ")
     num_list = num_list.split(',')
@@ -14,6 +15,7 @@ def generate_lists():
     
     return result
     
+ ## Zadanie 2
     
     def find_words_with_same_middle_letter():
     words = input("Podaj kilka wyrazów (oddziel je spacją): ")
