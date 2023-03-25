@@ -1,30 +1,25 @@
-## Zadanie 3
-def generate_lists():
-    num_list = input("Podaj co najmniej 7 liczb, oddzielając je przecinkami: ")
-    num_list = num_list.split(',')
-    last_num = int(num_list[-1])
-    mid_num = int(num_list[len(num_list)//2])
-    first_num = int(num_list[0])
+#Zadanie 1
 
-    result = []
-    for i in range(last_num):
-        inner_list = []
-        for j in range(num_list[-3]):
-            inner_list.append(random.randint(first_num, mid_num))
-        result.append(inner_list)
-    
-    return result
-    
- ## Zadanie 2
-    
-    def find_words_with_same_middle_letter():
-    words = input("Podaj kilka wyrazów (oddziel je spacją): ")
-    words_list = words.split()
-    result = []
+#A
+liczbyParzyste = [x for x in range(20) if x % 2 == 0]
+print(liczbyParzyste)
 
-    for word in words_list:
-        middle_index = len(word) // 2
-        if word[middle_index] == word[middle_index - 1]:
-            result.append(word)
+#B
+tekst = "Ala ma kota"
+dlugoscSlow = [len(slowo) for slowo in tekst.split()]
+print(dlugoscSlow)
 
-    return result
+#C
+liczbyPodzielnePrzez3I5 = [x for x in range(100) if (x % 2 == 0) and (x % 5 == 0)]
+print(liczbyPodzielnePrzez3I5)
+
+#D
+slowo1 = "kot"
+slowo2 = "pies"
+zbior_znakow = set(slowo1) | set(slowo2)
+print(zbior_znakow)
+
+#E
+zdanie = "To jest przykładowe zdanie do przetworzenia."
+slownik_dl = {slowo: len(slowo) for slowo in zdanie.split()}
+print(slownik_dl)
