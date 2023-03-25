@@ -23,3 +23,38 @@ print(zbior_znakow)
 zdanie = "To jest przykładowe zdanie do przetworzenia."
 slownik_dl = {slowo: len(slowo) for slowo in zdanie.split()}
 print(slownik_dl)
+
+
+
+#=======================================================================================
+#Zadanie 2
+import random
+import statistics
+
+random.seed(123456)
+lista= [random.randrange(1, 101) for i in range(200)]
+
+#1
+#Pierwsza wersja
+minElement = min(lista)
+print(minElement)
+
+## Druga wersja
+najmniejszy = lista[0]
+for element in lista:
+    if element < najmniejszy:
+        najmniejszy = element
+
+print(najmniejszy)
+
+#2
+mediana = statistics.median(lista)
+print(mediana)
+
+#3
+iloczyn = 1
+lista_liczb = [1, 2, 3, 4 ,5]
+for element in lista_liczb:
+    iloczyn *= element
+
+print(iloczyn)
