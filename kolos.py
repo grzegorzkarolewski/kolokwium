@@ -56,3 +56,40 @@ for element in lista_liczb:
     iloczyn *= element
 
 print(iloczyn)
+
+#4
+liczba_dwucyfrowych = 0
+
+for element in lista:
+    if element >= 10 and element <= 99:
+        liczba_dwucyfrowych += 1
+
+print("Liczba dwucyfrowych elementów na liście: ", liczba_dwucyfrowych)
+
+#5
+liczba_wiekszych = 0
+
+for element in lista:
+    if element > 27:
+        liczba_wiekszych += 1
+
+print("Liczba elementów większych niż 27: ", liczba_wiekszych)
+
+#6
+licznik = {}
+for element in lista:
+    if element in licznik:
+        licznik[element] += 1
+    else:
+        licznik[element] = 1
+
+for element, liczba in licznik.items():
+    print(str(element) + " występuje " + str(liczba) + " razy na liście.")
+
+#7
+
+posortowana_lista = sorted(lista)
+
+print("Najmniejsze 20 elementów listy:")
+for element in posortowana_lista[:20]:
+    print(element)
