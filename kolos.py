@@ -29,7 +29,7 @@ print(slownik_dl)
 import random
 import statistics
 
-random.seed(123456)
+random.seed(123456) #jaki mam numer indeksu?
 lista= [random.randrange(1, 101) for i in range(200)]
 
 #1
