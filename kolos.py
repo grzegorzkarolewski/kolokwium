@@ -24,8 +24,6 @@ zdanie = "To jest przykładowe zdanie do przetworzenia."
 slownik_dl = {slowo: len(slowo) for slowo in zdanie.split()}
 print(slownik_dl)
 
-
-
 #=======================================================================================
 #Zadanie 2
 import random
